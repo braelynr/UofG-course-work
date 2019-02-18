@@ -1,0 +1,41 @@
+****************************************************
+Your name		    Your student number
+The class name		The assignment name/number
+The date			your uoguelph email address
+****************************************************
+
+
+************************
+Program Description
+**************************
+ This program implements a basic structure for an abstract array. It is incomplete
+ and should be considered as a demonstration only for CIS*2520.
+ Throughout the code, I've tried follow good coding standards.
+
+
+************
+Compilation
+************
+ To compile this code:
+ run: make
+
+ To compile the testing program:
+ run: make test
+
+  Detailed Make options:
+
+  make  runs the cppcheck option
+  make prog  compiles the main.c program with the library
+  make test compiles the testing.c program with the library
+  make doxy creates the doxygen documentation in the docs subdirectory
+  make clean removes executable files
+
+****************************
+Known Limitations, Issues and Errors
+****************************
+
+ Incomplete set of functions.  
+ Untested.  
+ testing.c does not exist
+
+

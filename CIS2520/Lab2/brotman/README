@@ -1,0 +1,19 @@
+///////////////////////////
+Lab 2
+CIS 2520
+Braelyn Rotman
+June 18th, 2018
+README file
+///////////////////////////
+
+To run my test program:
+
+1. Type make test
+
+2. Type ./bin/testMe
+
+To run the testing library we were provided"
+
+1. type make all
+
+2. type ./bin/runTests

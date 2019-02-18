@@ -1,0 +1,59 @@
+\hypertarget{structHeap}{}\section{Heap Struct Reference}
+\label{structHeap}\index{Heap@{Heap}}
+
+
+{\ttfamily \#include $<$heap\+A\+D\+T.\+h$>$}
+
+
+
+Collaboration diagram for Heap\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=166pt]{structHeap__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{structHeap_a0013c0d18ce0d0fe1d094b74abbe5a25}\label{structHeap_a0013c0d18ce0d0fe1d094b74abbe5a25}} 
+\hyperlink{structNode}{Heap\+Node} $\ast$$\ast$ {\bfseries arr}
+\item 
+H\+E\+A\+P\+\_\+\+T\+Y\+PE \hyperlink{structHeap_a687e85d124c882bb01f5c9bf91171129}{type}
+\begin{DoxyCompactList}\small\item\em array that contains all of the heap nodes \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structHeap_a81af51cefd33e58d5d284cc6d6617744}\label{structHeap_a81af51cefd33e58d5d284cc6d6617744}} 
+\hyperlink{structNode}{Heap\+Node} $\ast$ {\bfseries last\+Position}
+\item 
+\mbox{\Hypertarget{structHeap_abc8d0107b18de7599058485d78c2e244}\label{structHeap_abc8d0107b18de7599058485d78c2e244}} 
+void($\ast$ \hyperlink{structHeap_abc8d0107b18de7599058485d78c2e244}{destroy\+Data} )(void $\ast$data)
+\begin{DoxyCompactList}\small\item\em function pointer to a function to delete a single piece of data from the heap \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structHeap_a6f4d91e7eebe5e20d5ee60418c59c5e6}\label{structHeap_a6f4d91e7eebe5e20d5ee60418c59c5e6}} 
+void($\ast$ \hyperlink{structHeap_a6f4d91e7eebe5e20d5ee60418c59c5e6}{print\+Node} )(void $\ast$to\+Be\+Printed)
+\begin{DoxyCompactList}\small\item\em function pointer to a function that prints out a data element of the heap \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structHeap_ab11468cee0bf82183a92cf2fa8bab107}\label{structHeap_ab11468cee0bf82183a92cf2fa8bab107}} 
+int($\ast$ \hyperlink{structHeap_ab11468cee0bf82183a92cf2fa8bab107}{compare} )(const void $\ast$first, const void $\ast$second)
+\begin{DoxyCompactList}\small\item\em function pointer to a comparison function for the purpose of inserting and deleting elements \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structHeap_ac291cf589f86e95198621d33e21a05a6}\label{structHeap_ac291cf589f86e95198621d33e21a05a6}} 
+int \hyperlink{structHeap_ac291cf589f86e95198621d33e21a05a6}{size}
+\begin{DoxyCompactList}\small\item\em number of elements in array \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\hyperlink{structHeap}{Heap} structure 
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{structHeap_a687e85d124c882bb01f5c9bf91171129}\label{structHeap_a687e85d124c882bb01f5c9bf91171129}} 
+\index{Heap@{Heap}!type@{type}}
+\index{type@{type}!Heap@{Heap}}
+\subsubsection{\texorpdfstring{type}{type}}
+{\footnotesize\ttfamily H\+E\+A\+P\+\_\+\+T\+Y\+PE Heap\+::type}
+
+
+
+array that contains all of the heap nodes 
+
+flag for choosing between min and max heap 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/heap\+A\+D\+T.\+h\end{DoxyCompactItemize}

@@ -1,0 +1,114 @@
+\hypertarget{hospital_8h}{}\section{include/hospital.h File Reference}
+\label{hospital_8h}\index{include/hospital.\+h@{include/hospital.\+h}}
+
+
+File containing the extra function for Assignment 3.  
+
+
+{\ttfamily \#include \char`\"{}Queue\+A\+D\+T.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include $<$stdbool.\+h$>$}\newline
+Include dependency graph for hospital.\+h\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{hospital_8h__incl}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structclient}{client}
+\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef struct \hyperlink{structclient}{client} \hyperlink{hospital_8h_a442f14649eefa15911b3122936e5cf90}{client}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{hospital_8h_a567564ad5e52b7075309fe7665880dd1}{print\+Report} (\hyperlink{structQueue}{Queue} $\ast$treated, int timer1, float timer2)
+\item 
+void \hyperlink{hospital_8h_a57d4c229c1eaa2e9bbf21c266fb6e7d5}{destroy\+Data} (void $\ast$data)
+\item 
+int \hyperlink{hospital_8h_ab6692939eeb89d044d92061a6501e505}{compare} (const void $\ast$first, const void $\ast$second)
+\item 
+void \hyperlink{hospital_8h_a5fd12420070542d256fc70e03b7fb6ae}{print\+List} (\hyperlink{structQueue}{Queue} $\ast$queue)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+File containing the extra function for Assignment 3. 
+
+\begin{DoxyAuthor}{Author}
+Braelyn Rotman 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+July 2018 
+\end{DoxyDate}
+
+
+\subsection{Typedef Documentation}
+\mbox{\Hypertarget{hospital_8h_a442f14649eefa15911b3122936e5cf90}\label{hospital_8h_a442f14649eefa15911b3122936e5cf90}} 
+\index{hospital.\+h@{hospital.\+h}!client@{client}}
+\index{client@{client}!hospital.\+h@{hospital.\+h}}
+\subsubsection{\texorpdfstring{client}{client}}
+{\footnotesize\ttfamily typedef struct \hyperlink{structclient}{client}  \hyperlink{structclient}{client}}
+
+client structure 
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{hospital_8h_ab6692939eeb89d044d92061a6501e505}\label{hospital_8h_ab6692939eeb89d044d92061a6501e505}} 
+\index{hospital.\+h@{hospital.\+h}!compare@{compare}}
+\index{compare@{compare}!hospital.\+h@{hospital.\+h}}
+\subsubsection{\texorpdfstring{compare()}{compare()}}
+{\footnotesize\ttfamily int compare (\begin{DoxyParamCaption}\item[{const void $\ast$}]{first,  }\item[{const void $\ast$}]{second }\end{DoxyParamCaption})}
+
+Function to compare client priorities 
+\begin{DoxyParams}{Parameters}
+{\em first} & first client to compare \\
+\hline
+{\em second} & second client to compare \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{hospital_8h_a57d4c229c1eaa2e9bbf21c266fb6e7d5}\label{hospital_8h_a57d4c229c1eaa2e9bbf21c266fb6e7d5}} 
+\index{hospital.\+h@{hospital.\+h}!destroy\+Data@{destroy\+Data}}
+\index{destroy\+Data@{destroy\+Data}!hospital.\+h@{hospital.\+h}}
+\subsubsection{\texorpdfstring{destroy\+Data()}{destroyData()}}
+{\footnotesize\ttfamily void destroy\+Data (\begin{DoxyParamCaption}\item[{void $\ast$}]{data }\end{DoxyParamCaption})}
+
+Function to clear and free data 
+\begin{DoxyParams}{Parameters}
+{\em data} & data to be cleared and then freed \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{hospital_8h_a5fd12420070542d256fc70e03b7fb6ae}\label{hospital_8h_a5fd12420070542d256fc70e03b7fb6ae}} 
+\index{hospital.\+h@{hospital.\+h}!print\+List@{print\+List}}
+\index{print\+List@{print\+List}!hospital.\+h@{hospital.\+h}}
+\subsubsection{\texorpdfstring{print\+List()}{printList()}}
+{\footnotesize\ttfamily void print\+List (\begin{DoxyParamCaption}\item[{\hyperlink{structQueue}{Queue} $\ast$}]{queue }\end{DoxyParamCaption})}
+
+Function to print a queue list 
+\begin{DoxyParams}{Parameters}
+{\em queue} & queue containing list to print \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{hospital_8h_a567564ad5e52b7075309fe7665880dd1}\label{hospital_8h_a567564ad5e52b7075309fe7665880dd1}} 
+\index{hospital.\+h@{hospital.\+h}!print\+Report@{print\+Report}}
+\index{print\+Report@{print\+Report}!hospital.\+h@{hospital.\+h}}
+\subsubsection{\texorpdfstring{print\+Report()}{printReport()}}
+{\footnotesize\ttfamily void print\+Report (\begin{DoxyParamCaption}\item[{\hyperlink{structQueue}{Queue} $\ast$}]{treated,  }\item[{int}]{timer1,  }\item[{float}]{timer2 }\end{DoxyParamCaption})}
+
+Function to print the final report to report.\+txt 
+\begin{DoxyParams}{Parameters}
+{\em treated} & queue of clients treated in order of treatment start time \\
+\hline
+{\em timer1} & simulation time with no specialist doctors \\
+\hline
+{\em timer2} & simulation time with specialist doctors \\
+\hline
+\end{DoxyParams}

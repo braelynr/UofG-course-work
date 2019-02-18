@@ -1,0 +1,235 @@
+///////////////////////////
+Assignment 2
+CIS 2520
+Braelyn Rotman
+ID: 1006740
+brotman@uoguelph.ca
+July 16th, 2018
+README file
+///////////////////////////
+
+************************************************
+Compiling and Running Section
+************************************************
+To run my program:
+
+1. Type make prog
+
+2. Type One of the Following:
+./bin/runMe testfile1.txt
+./bin/runMe testfile2.txt
+./bin/runMe testfile3.txt
+./bin/runMe testfile4.txt
+Or include your own client information test file.
+
+************************************************
+Report Section
+************************************************
+How to Read report.txt :
+
+The first section in just a header which contains my name and student ID
+
+The second section contains the list of clients in the order that they were treated
+This section is in the same format as the input files:
+EXAMPLE LINE: sal45 2 EC
+the first data on each line is the client ID
+the second data is the priority number (which may have been changed during the starvation algorithm)
+the third data is the symptom code
+
+After the client info section the number of general practitioners which specialists exist are listed.
+This is followed by the simulation times.
+The first time listed is when the simulation is run with no specialist doctors.
+The second time listed is including the specialist doctors.
+
+************************************************
+Program Information Section
+************************************************
+The simulation runs as follows:
+
+All clients arrive at the ER at the same time.
+Clients are registers by the order of their line up. This is the order they are in on the input file.
+Clients are sorted in a min heap and then passed into a queue to be treated.
+An open general practitioner will always take the next client in line.
+An open specialist can search the line for their next client.
+If a specialist is busy a GP will take their client.
+
+Each symptom type takes a different amount of time to treat. These times are made up and have no correlation.
+They are as follows:
+
+    CV (Cardiovascular)               - 15 minutes
+    HN (Ears, mouth, throat, nose)    - 3 minutes
+    EV (Environmental)                - 4 minutes
+    GI (Gastrointestinal)             - 20 minutes
+    MH (Mental Health)                - 10 minutes
+    NC (Neurological)                 - 20 minutes
+    EC (Opthalmology)                 - 7 minutes
+    RC (Respiratory)                  - 8 minutes
+    SK (Skin)                         - 5 minutes
+    SA (Substance Abuse)              - 10 minutes
+    TR (Trauma)                       - 14 minutes
+
+
+Starvation Algorithm Information:
+
+To prevent low priority clients from being pushed to the end of the line,
+when clients are swapped in a heap the priority of the client pushed down is increased (subtract 1).
+Clients with the same priority are not swapped to prevent making the heap invalid.
+
+Starvation Algorithm Research Sources:
+https://ink.library.smu.edu.sg/cgi/viewcontent.cgi?article=4319&context=sis_research
+https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3900220/
+
+************************************************
+Testing Section
+************************************************
+**testfile1.txt
+  This file contains 20 clients of random priorities. The client IDs are numbers in order from 1-20.
+  This makes it easy to see if any of the early clients were starved to the end of the list.
+
+**testfile2.txt
+  This file contains 20 clients. The client IDs are numbers in order from 1-15.
+  The top clients have the lowest priorities and the bottom clients have the highest priorities.
+  The first clients shouldn't be starved and pushed all the way to the bottom of the list.
+
+**testfile3.txt
+  This file contains no clients.
+  The program should run to completion with 0 minutes simulation time.
+
+**testfile4.txt
+  Contains 7 clients, IDs are ordered numbers 1-7.
+  All clients have specialist symptoms but should also be seen by GPs to save time.
+
+************************************************
+Complexity Section
+************************************************
+**heap.h
+
+Function: Heap *createHeap(size_t initialSize, HEAP_TYPE htype, void (*destroyData)(void *data),void (*printNode)(void *toBePrinted),int (*compare)(const void *first, const void *second));
+  Big O Notation: O(1)
+  Allocates space for a heap and the array to hold the heapnodes. Initializes size, heap type, lastPosition and sets the function pointers
+
+Function: HeapNode *createHeapNode(void *data);
+  Big O Notation: O(1)
+  Allocated space for the heapnode. Sets parent and child pointers to NULL. Sets data pointer.
+
+Function: void insertHeapNode(Heap *heap, void *data);
+  Big O Notation: O(N)
+  Searches linearly for next open position in array. Allocates more space in array if needed.
+
+Function: void deleteMinOrMax(Heap *heap);
+  Big O Notation: O(N)
+  Places last element inplace of the root element. Swaps new root element with child nodes until heap is satified.
+
+Function: void *getMinOrMax(Heap *heap);
+  Big O Notation: O(1);
+  Function returns root element. (first in array)
+
+Function: void changeHeapType(Heap *heap);
+  Big O Notation: O(N)
+  Creates new heap of opposite type. Starts at first element in old heap array and adds to new heap array. Finishes at end of array.
+
+Function: void deleteHeap(Heap *heap);
+  Big O Notation: O(N)
+  Function iterates through heap array linearly and frees each element and data
+
+
+**heapADT.h
+
+Function: void heapify (Heap *heap, HeapNode * newNode);
+  Big O Notation: O(N)
+  Function searches linearly through an array to find the most current data.
+  This data is swapped with the parent nodes repeatly until the parent is smaller or larger than the data. (depends on heap type)
+
+**hospital.h
+
+Function: void printReport(Queue *treated, int timer1, float timer2);
+  Big O Notation: O(N)
+  This function prints out hardcoded data as well as moves linearly through a list head to tail.
+
+Function: void destroyData(void *data);
+  Big O Notation: O(1)
+  This function resets and frees data
+
+Function: int compare(const void *first, const void *second);
+  Big O Notation: O(1)
+  This function compares two items and returns an integer.
+
+Function: void printList (Queue *queue);
+  Big O Notation: O(N)
+  Prints client information from a list starting at the head, finishing at the tail
+
+
+**QueueADT.h
+
+Function: Queue * create();
+  Big O Notation: O(1)
+  This function mallocs space for a new queue and sets all pointers to NULL
+
+Function: void destroy(Queue *pQueue);
+  Big O Notation: O(N)
+  This function deletes each item in the list starting at the front, finishing at the back.
+
+Function: void enqueue(Queue *pQueue, void *data);
+  Big O Notation: O(1)
+  This function adds a node to the back of a queue. No searching is involved.
+
+Function: void * dequeue(Queue *pQueue);
+  Big O Notation: O(1)
+  This function deletes a node from the front of a queue. No searching is involved.
+
+Function: void * peek(Queue *pQueue);
+  Big O Notation: O(1)
+  This function gets the element at the front of the queue. No searching required.
+
+Function: bool isEmpty(Queue *pQueue);
+  Big O Notation: O(1)
+  This function checks if the front of the queue is NULL. No searching required.
+
+
+**LinkedListAPI.h
+
+Function: List *initializeList(void (*printFunction)(void *toBePrinted),void (*deleteFunction)(void *toBeDeleted),int (*compareFunction)(const void *first,const void *second));
+  Big O Notation: O(1)
+  This function mallocs space for a new list and sets all pointers to NULL
+
+Function: Node *initializeNode(void *data);
+  Big O Notation: O(1)
+  This function mallocs space for a new node and sets all pointers to NULL
+
+Function: void insertFront(List *list, void *toBeAdded);
+  Big O Notation: O(1)
+  This function inserts a node at the front of a list. No searching is involved
+
+Function: void insertBack(List *list, void *toBeAdded);
+  Big O Notation: O(1)
+  This function inserts a node at the back of a list. No searching involved because we have a pointer to the tail.
+
+Function: void deleteList(List *list);
+  Big O Notation: O(N)
+  This function deletes each node in a list starting at the head and ending at the tail.
+
+Function: void insertSorted(List *list, void *toBeAdded);
+  Big O Notation: O(N)
+  This function conducts a linear search to find the correct position to insert the node.
+  The worst case is that every node must be examined and the new node is inserted at the tail every time.
+
+Function: int deleteDataFromList(List *list, void *toBeDeleted);
+  Big O Notation: O(N)
+  This function conducts a linear search to find the node to delete.
+  The worst case is that the every node must be searched and the node to delete is at the tail every time.
+
+Function: void *getFromFront(List *list);
+  Big O Notation: O(1)
+  This function returns the data at the head of the list.
+
+Function: void *getFromBack(List *list);
+  Big O Notation: O(1)
+  This function returns the data at the tail of the list.
+
+Function: void printForward(List *list);
+  Big O Notation: O(N)
+  This function iterates linearly through the list starting at the head and ending at the tail.
+
+Function: void printBackwards(List *list);
+  Big O Notation: O(N)
+  This function iterates linearly through the list starting at the tail and ending at the head.

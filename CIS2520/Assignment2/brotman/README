@@ -1,0 +1,84 @@
+///////////////////////////
+Assignment 2
+CIS 2520
+Braelyn Rotman
+June 25th, 2018
+README file
+///////////////////////////
+
+To run my program:
+
+1. Type make prog
+
+2. Type ./bin/runMe
+
+************************************************
+Complexity Section
+************************************************
+**HashTableAPI.h
+
+Function: HTable *createTable(size_t size, int (*hashFunction)(size_t tableSize, char *key),void (*destroyData)(void *data),void (*printData)(void *toBePrinted));
+  Big O Notation: O(1)
+  This function allocates space for the new hashtable and sets the function pointer and size variables in the hashtable structure
+
+Fucntion: Node *createNode(char *key, void *data);
+  Big O Notation: O(1)
+  This function allocates space for the new node and sets the key and data variables. Next pointer is set to NULL
+
+Function: void destroyTable(HTable *hashTable);
+  Big O Notation: O(N)
+  This function moves through the hashtable linearly and destroys all data as it moves through. Then the memory for the table itself is freed
+
+Function: void insertData(HTable *hashTable, char *key, void *data);
+  Big O Notation: O(N)
+  Inserts data at the index given by the hash function. Searches linearly for the last item at the index to insert after
+
+Function: void removeData(HTable *hashTable, char *key);
+  Big O Notation: O(N)
+  Uses hashfunction to find table index. Searches linearly through items at index for the data to remove
+
+Function: void *lookupData(HTable *hashTable, char *key);
+  Big O Notation: O(N)
+  Uses hashfunction to find table index. Searches linearly through list at index to find correct data
+
+**PasswordVault.h
+
+Function: int hashFunction (size_t tableSize, char *key);
+  Big O Notation: O(N)
+  Runs through each character in the password key and adds the ascii values together. Divides the total by the table size
+
+Function: void destroyData (void *data);
+  Big O Notation: O(1)
+  Sets the data value to NULL then frees the memory
+
+Function: void printData (void *toBePrinted);   **** NOT USED ****
+  Big O Notation: O(1)
+  Converts void data to char type and prints
+
+Function: void enterPassword (HTable *vault);
+  Big O Notation: O(1)
+  Gets password info from the user. Calls insertData
+
+Function: void *retrievePassword (HTable *vault);
+  Big O Notation: O(1)
+  Gets password key from user, calls lookupData and returns password
+
+Function: void changePassword (HTable *vault);
+  Big O Notation: O(1)
+  Calls removeData, gets user input for new password, calls insertData
+
+Function: void deletePassword (HTable *vault);
+  Big O Notation: O(1)
+  Gets key from user, calls removeData
+
+Function: void deleteAll (HTable *vault);
+  Big O Notation: O(1)
+  Calls destroyTable, creates "new" table
+
+Function: char *setPassword();
+  Big O Notation: O(1)
+  Asks user to input a password. No searching involved
+
+Function: char *changeProgPass(char *progPass);
+  Big O Notation: O(1)
+  Asks user for new password. No searching involved

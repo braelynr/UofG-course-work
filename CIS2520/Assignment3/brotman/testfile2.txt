@@ -1,0 +1,15 @@
+one 5 CV
+two 5 HN
+three 5 EV
+four 5 GI
+five 4 MH
+six 4 CV
+seven 4 CV
+eight 4 RC
+nine 3 TR
+ten 3 SA
+eleven 3 SK
+twelve 2 RC
+thirteen 2 EC
+fourteen 1 CV
+fifteen 1 GI

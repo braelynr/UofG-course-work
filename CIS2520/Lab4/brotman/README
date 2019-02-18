@@ -1,0 +1,19 @@
+///////////////////////////
+Lab 4
+CIS 2520
+Braelyn Rotman
+July, 2018
+README file
+///////////////////////////
+
+To run testing suite:
+
+1. Type make all
+
+2. Type ./bin/runTests
+
+To run my test program:
+
+1. Type make test
+
+2. Type ./bin/testMe

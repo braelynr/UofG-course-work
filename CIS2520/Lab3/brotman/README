@@ -1,0 +1,13 @@
+///////////////////////////
+Lab 3
+CIS 2520
+Braelyn Rotman
+July, 2018
+README file
+///////////////////////////
+
+To run my test program:
+
+1. Type make test
+
+2. Type ./bin/testMe

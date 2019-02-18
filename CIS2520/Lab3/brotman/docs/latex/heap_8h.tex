@@ -1,0 +1,166 @@
+\hypertarget{heap_8h}{}\section{include/heap.h File Reference}
+\label{heap_8h}\index{include/heap.\+h@{include/heap.\+h}}
+
+
+File containing the function definitions of a heap.  
+
+
+{\ttfamily \#include \char`\"{}heap\+A\+D\+T.\+h\char`\"{}}\newline
+Include dependency graph for heap.\+h\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=160pt]{heap_8h__incl}
+\end{center}
+\end{figure}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{heap_8h_a4c6c6aff2b0e57a0ec4f2d4d6276a48d}\label{heap_8h_a4c6c6aff2b0e57a0ec4f2d4d6276a48d}} 
+\#define {\bfseries M\+I\+N\+\_\+\+H\+E\+AP}~0
+\item 
+\mbox{\Hypertarget{heap_8h_abbeb121d44260375bbedb804aa56bdc0}\label{heap_8h_abbeb121d44260375bbedb804aa56bdc0}} 
+\#define {\bfseries M\+A\+X\+\_\+\+H\+E\+AP}~1
+\item 
+\mbox{\Hypertarget{heap_8h_a3565d2f7ab5f5189c585448b1455fb09}\label{heap_8h_a3565d2f7ab5f5189c585448b1455fb09}} 
+\#define {\bfseries H\+E\+A\+P\+\_\+\+T\+Y\+PE}~unsigned char
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{structHeap}{Heap} $\ast$ \hyperlink{heap_8h_ac5ef5caa7cdb34d9f1974b45da81368b}{create\+Heap} (size\+\_\+t initial\+Size, H\+E\+A\+P\+\_\+\+T\+Y\+PE htype, void($\ast$destroy\+Data)(void $\ast$data), void($\ast$print\+Node)(void $\ast$to\+Be\+Printed), int($\ast$compare)(const void $\ast$first, const void $\ast$second))
+\item 
+\hyperlink{structNode}{Heap\+Node} $\ast$ \hyperlink{heap_8h_af0dc6209fcc11d9b21bddd2da2788559}{create\+Heap\+Node} (void $\ast$data)
+\item 
+void \hyperlink{heap_8h_a6aea510506dc9cf7255f37fdb69d6f4b}{insert\+Heap\+Node} (\hyperlink{structHeap}{Heap} $\ast$heap, void $\ast$data)
+\item 
+void \hyperlink{heap_8h_a812ef014f7e8c7567d6de69504a2f2af}{delete\+Min\+Or\+Max} (\hyperlink{structHeap}{Heap} $\ast$heap)
+\item 
+void $\ast$ \hyperlink{heap_8h_ad35b71ae5c43d7a26a577ee0d9297015}{get\+Min\+Or\+Max} (\hyperlink{structHeap}{Heap} $\ast$heap)
+\item 
+void \hyperlink{heap_8h_a20f07c1cc6a040fa62afffd83c2359b8}{change\+Heap\+Type} (\hyperlink{structHeap}{Heap} $\ast$heap)
+\item 
+void \hyperlink{heap_8h_ac0ddd1874bd4ad9992a3ab465a54dbbc}{delete\+Heap} (\hyperlink{structHeap}{Heap} $\ast$heap)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+File containing the function definitions of a heap. 
+
+\begin{DoxyAuthor}{Author}
+Michael Ellis 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+March 2017 
+\end{DoxyDate}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{heap_8h_a20f07c1cc6a040fa62afffd83c2359b8}\label{heap_8h_a20f07c1cc6a040fa62afffd83c2359b8}} 
+\index{heap.\+h@{heap.\+h}!change\+Heap\+Type@{change\+Heap\+Type}}
+\index{change\+Heap\+Type@{change\+Heap\+Type}!heap.\+h@{heap.\+h}}
+\subsubsection{\texorpdfstring{change\+Heap\+Type()}{changeHeapType()}}
+{\footnotesize\ttfamily void change\+Heap\+Type (\begin{DoxyParamCaption}\item[{\hyperlink{structHeap}{Heap} $\ast$}]{heap }\end{DoxyParamCaption})}
+
+Function to switch the type of heap from min-\/to-\/max or max-\/to-\/min. This changes the htype flag from M\+I\+N\+\_\+\+H\+E\+AP to M\+A\+X\+\_\+\+H\+E\+AP and vice versa. Once the flag has been changed, heapify is called on the heap to rearrange it to fit the new heap property. 
+\begin{DoxyParams}{Parameters}
+{\em heap} & Pointer to a heap to switch from min-\/to-\/max or max-\/to-\/min. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{heap_8h_ac5ef5caa7cdb34d9f1974b45da81368b}\label{heap_8h_ac5ef5caa7cdb34d9f1974b45da81368b}} 
+\index{heap.\+h@{heap.\+h}!create\+Heap@{create\+Heap}}
+\index{create\+Heap@{create\+Heap}!heap.\+h@{heap.\+h}}
+\subsubsection{\texorpdfstring{create\+Heap()}{createHeap()}}
+{\footnotesize\ttfamily \hyperlink{structHeap}{Heap}$\ast$ create\+Heap (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{initial\+Size,  }\item[{H\+E\+A\+P\+\_\+\+T\+Y\+PE}]{htype,  }\item[{void($\ast$)(void $\ast$data)}]{destroy\+Data,  }\item[{void($\ast$)(void $\ast$to\+Be\+Printed)}]{print\+Node,  }\item[{int($\ast$)(const void $\ast$first, const void $\ast$second)}]{compare }\end{DoxyParamCaption})}
+
+Function to allocate memory to the heap and point the heap to the appropriate functions. Allocates memory to the heap based on the size given. \begin{DoxyReturn}{Returns}
+pointer to the heap 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em initial\+Size} & initial size of the heap \\
+\hline
+{\em htype} & flag to choose whether to start the heap as a min heap or max heap. Takes in values M\+I\+N\+\_\+\+H\+E\+AP and M\+A\+X\+\_\+\+H\+E\+AP \\
+\hline
+{\em compare} & function pointer to a function that compares two pieces of data. \\
+\hline
+{\em destroy\+Data} & function pointer to a function to delete a single piece of data from the heap \\
+\hline
+{\em print\+Node} & function pointer to a function that prints out a data element of the heap \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+pointer to the heap 
+\end{DoxyReturn}
+\mbox{\Hypertarget{heap_8h_af0dc6209fcc11d9b21bddd2da2788559}\label{heap_8h_af0dc6209fcc11d9b21bddd2da2788559}} 
+\index{heap.\+h@{heap.\+h}!create\+Heap\+Node@{create\+Heap\+Node}}
+\index{create\+Heap\+Node@{create\+Heap\+Node}!heap.\+h@{heap.\+h}}
+\subsubsection{\texorpdfstring{create\+Heap\+Node()}{createHeapNode()}}
+{\footnotesize\ttfamily \hyperlink{structNode}{Heap\+Node}$\ast$ create\+Heap\+Node (\begin{DoxyParamCaption}\item[{void $\ast$}]{data }\end{DoxyParamCaption})}
+
+Function for creating a node for a heap. \begin{DoxyPrecond}{Precondition}
+\hyperlink{structNode}{Node} must be cast to void pointer before being added. 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+\hyperlink{structNode}{Node} is valid and able to be added to a heap 
+\end{DoxyPostcond}
+
+\begin{DoxyParams}{Parameters}
+{\em data} & is a generic pointer to any data type that is to be stored in the heap. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+returns a node for a heap 
+\end{DoxyReturn}
+\mbox{\Hypertarget{heap_8h_ac0ddd1874bd4ad9992a3ab465a54dbbc}\label{heap_8h_ac0ddd1874bd4ad9992a3ab465a54dbbc}} 
+\index{heap.\+h@{heap.\+h}!delete\+Heap@{delete\+Heap}}
+\index{delete\+Heap@{delete\+Heap}!heap.\+h@{heap.\+h}}
+\subsubsection{\texorpdfstring{delete\+Heap()}{deleteHeap()}}
+{\footnotesize\ttfamily void delete\+Heap (\begin{DoxyParamCaption}\item[{\hyperlink{structHeap}{Heap} $\ast$}]{heap }\end{DoxyParamCaption})}
+
+Function delete a heap. This function calls delete\+Min\+Or\+Max the same amount of times as the size of the heap, which heapifies after each deletion. Finally, it frees the \hyperlink{structHeap}{Heap} structure. 
+\begin{DoxyParams}{Parameters}
+{\em heap} & Pointer of a heap to be deleted. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{heap_8h_a812ef014f7e8c7567d6de69504a2f2af}\label{heap_8h_a812ef014f7e8c7567d6de69504a2f2af}} 
+\index{heap.\+h@{heap.\+h}!delete\+Min\+Or\+Max@{delete\+Min\+Or\+Max}}
+\index{delete\+Min\+Or\+Max@{delete\+Min\+Or\+Max}!heap.\+h@{heap.\+h}}
+\subsubsection{\texorpdfstring{delete\+Min\+Or\+Max()}{deleteMinOrMax()}}
+{\footnotesize\ttfamily void delete\+Min\+Or\+Max (\begin{DoxyParamCaption}\item[{\hyperlink{structHeap}{Heap} $\ast$}]{heap }\end{DoxyParamCaption})}
+
+Function to remove the maximum or minimum \hyperlink{structNode}{Node} of the heap (depending on min heap or max heap). Once the \hyperlink{structNode}{Node} has been deleted, the \hyperlink{structNode}{Node} at the deepest point in the \hyperlink{structHeap}{Heap} is placed in the min/max position. Finally, the heap is heapified to maintain heap property. \begin{DoxyPrecond}{Precondition}
+\hyperlink{structHeap}{Heap} must exist and have memory allocated to it 
+\end{DoxyPrecond}
+
+\begin{DoxyParams}{Parameters}
+{\em heap} & Pointer to a heap. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{heap_8h_ad35b71ae5c43d7a26a577ee0d9297015}\label{heap_8h_ad35b71ae5c43d7a26a577ee0d9297015}} 
+\index{heap.\+h@{heap.\+h}!get\+Min\+Or\+Max@{get\+Min\+Or\+Max}}
+\index{get\+Min\+Or\+Max@{get\+Min\+Or\+Max}!heap.\+h@{heap.\+h}}
+\subsubsection{\texorpdfstring{get\+Min\+Or\+Max()}{getMinOrMax()}}
+{\footnotesize\ttfamily void$\ast$ get\+Min\+Or\+Max (\begin{DoxyParamCaption}\item[{\hyperlink{structHeap}{Heap} $\ast$}]{heap }\end{DoxyParamCaption})}
+
+Function to rearrange a heap to maintain heap property. Starting at the min/max, each \hyperlink{structNode}{Node} is compared with its two children to determine the smallest/largest of the three. If the parent is smaller/larger than the child, it is swapped. Heapify is then recursively called on the child in order to continue heapifying until it reaches the bottom of the heap. 
+\begin{DoxyParams}{Parameters}
+{\em heap} & Pointer to a heap to be heapified \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{heap_8h_a6aea510506dc9cf7255f37fdb69d6f4b}\label{heap_8h_a6aea510506dc9cf7255f37fdb69d6f4b}} 
+\index{heap.\+h@{heap.\+h}!insert\+Heap\+Node@{insert\+Heap\+Node}}
+\index{insert\+Heap\+Node@{insert\+Heap\+Node}!heap.\+h@{heap.\+h}}
+\subsubsection{\texorpdfstring{insert\+Heap\+Node()}{insertHeapNode()}}
+{\footnotesize\ttfamily void insert\+Heap\+Node (\begin{DoxyParamCaption}\item[{\hyperlink{structHeap}{Heap} $\ast$}]{heap,  }\item[{void $\ast$}]{data }\end{DoxyParamCaption})}
+
+Inserts a \hyperlink{structNode}{Node} into the heap. Uses create\+Heap\+Node to place the data in a \hyperlink{structNode}{Node} structure, and then puts the newly created \hyperlink{structNode}{Node} in the heap by adding at the bottom and comparing it to each parent node until it fits the \hyperlink{structHeap}{Heap} structure. If the heap is a min heap, if the \hyperlink{structNode}{Node} is lesser than the parent, it is swapped. The opposite is true for a max heap. \begin{DoxyPrecond}{Precondition}
+\hyperlink{structHeap}{Heap} must exist and have data allocated to it 
+\end{DoxyPrecond}
+
+\begin{DoxyParams}{Parameters}
+{\em heap} & Pointer to a heap \\
+\hline
+{\em data} & Pointer to generic data that is to be inserted into the heap \\
+\hline
+\end{DoxyParams}

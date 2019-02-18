@@ -1,0 +1,32 @@
+\hypertarget{structBalancedBinTree}{}\section{Balanced\+Bin\+Tree Struct Reference}
+\label{structBalancedBinTree}\index{Balanced\+Bin\+Tree@{Balanced\+Bin\+Tree}}
+
+
+Collaboration diagram for Balanced\+Bin\+Tree\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=234pt]{structBalancedBinTree__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{structBalancedBinTree_a79eb6910645b1a28d977e59b69d89972}\label{structBalancedBinTree_a79eb6910645b1a28d977e59b69d89972}} 
+\hyperlink{tree_8h_a2215a7c79686526cfed9198a82cb295e}{Tree\+Node} $\ast$ \hyperlink{structBalancedBinTree_a79eb6910645b1a28d977e59b69d89972}{root}
+\begin{DoxyCompactList}\small\item\em pointer to generic data that is to be stored in the tree \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structBalancedBinTree_a6ac05549d1e01bf3011ff1b772b1fc9b}\label{structBalancedBinTree_a6ac05549d1e01bf3011ff1b772b1fc9b}} 
+int($\ast$ \hyperlink{structBalancedBinTree_a6ac05549d1e01bf3011ff1b772b1fc9b}{compare\+FP} )(void $\ast$data1, void $\ast$data2)
+\begin{DoxyCompactList}\small\item\em function pointer to a comparison function for the purpose of inserting and deleting elements \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structBalancedBinTree_a6f4f05cf895b0784475b307320c4f746}\label{structBalancedBinTree_a6f4f05cf895b0784475b307320c4f746}} 
+void($\ast$ \hyperlink{structBalancedBinTree_a6f4f05cf895b0784475b307320c4f746}{destroy\+FP} )(void $\ast$data)
+\begin{DoxyCompactList}\small\item\em function pointer to a function to free a single pointer that is deleted from the tree \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structBalancedBinTree_a91f8d466e1dc38a603e2c85ec925d6e5}\label{structBalancedBinTree_a91f8d466e1dc38a603e2c85ec925d6e5}} 
+void $\ast$($\ast$ \hyperlink{structBalancedBinTree_a91f8d466e1dc38a603e2c85ec925d6e5}{copy\+FP} )(void $\ast$to\+Be\+Copy)
+\begin{DoxyCompactList}\small\item\em function pointer to a function that copies pointer data \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/\hyperlink{tree_8h}{tree.\+h}\end{DoxyCompactItemize}

@@ -1,0 +1,184 @@
+\hypertarget{QueueADT_8h}{}\section{include/\+Queue\+A\+DT.h File Reference}
+\label{QueueADT_8h}\index{include/\+Queue\+A\+D\+T.\+h@{include/\+Queue\+A\+D\+T.\+h}}
+
+
+File containing the function definitions of a queue.  
+
+
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdbool.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}Linked\+List\+A\+P\+I.\+h\char`\"{}}\newline
+Include dependency graph for Queue\+A\+D\+T.\+h\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=266pt]{QueueADT_8h__incl}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structQueue}{Queue}
+\item 
+struct \hyperlink{structcar}{car}
+\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef struct \hyperlink{structQueue}{Queue} \hyperlink{QueueADT_8h_ad4f29a362a072ba563b41ae8e935c6fc}{Queue}
+\item 
+typedef struct \hyperlink{structcar}{car} \hyperlink{QueueADT_8h_a17808c9c3518e92cb43835e3bfa9f878}{car}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{structQueue}{Queue} $\ast$ \hyperlink{QueueADT_8h_accc2c49d11d601a77eb598c3741ffe9a}{create} ()
+\item 
+void \hyperlink{QueueADT_8h_a89893c23833b9fa8e7dde90343ca8885}{destroy} (\hyperlink{structQueue}{Queue} $\ast$p\+Queue)
+\item 
+void \hyperlink{QueueADT_8h_a719e32872e4862e2cd83281e87b60ed1}{enqueue} (\hyperlink{structQueue}{Queue} $\ast$p\+Queue, void $\ast$data)
+\item 
+void $\ast$ \hyperlink{QueueADT_8h_a045ef43f63919ca19115c060344cdac0}{dequeue} (\hyperlink{structQueue}{Queue} $\ast$p\+Queue)
+\item 
+void $\ast$ \hyperlink{QueueADT_8h_a8fa514a5fd902bd2fe46d57d14d1ae8a}{peek} (\hyperlink{structQueue}{Queue} $\ast$p\+Queue)
+\item 
+bool \hyperlink{QueueADT_8h_ae28fcf858ea1c33ed0b56eb82b647306}{is\+Empty} (\hyperlink{structQueue}{Queue} $\ast$p\+Queue)
+\item 
+int \hyperlink{QueueADT_8h_ab6692939eeb89d044d92061a6501e505}{compare} (const void $\ast$first, const void $\ast$second)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+File containing the function definitions of a queue. 
+
+\begin{DoxyAuthor}{Author}
+Braelyn Rotman 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+June 2, 2018 
+\end{DoxyDate}
+
+
+\subsection{Typedef Documentation}
+\mbox{\Hypertarget{QueueADT_8h_a17808c9c3518e92cb43835e3bfa9f878}\label{QueueADT_8h_a17808c9c3518e92cb43835e3bfa9f878}} 
+\index{Queue\+A\+D\+T.\+h@{Queue\+A\+D\+T.\+h}!car@{car}}
+\index{car@{car}!Queue\+A\+D\+T.\+h@{Queue\+A\+D\+T.\+h}}
+\subsubsection{\texorpdfstring{car}{car}}
+{\footnotesize\ttfamily typedef struct \hyperlink{structcar}{car} \hyperlink{structcar}{car}}
+
+car structure\+: this is the data that will be stored in the queue \mbox{\Hypertarget{QueueADT_8h_ad4f29a362a072ba563b41ae8e935c6fc}\label{QueueADT_8h_ad4f29a362a072ba563b41ae8e935c6fc}} 
+\index{Queue\+A\+D\+T.\+h@{Queue\+A\+D\+T.\+h}!Queue@{Queue}}
+\index{Queue@{Queue}!Queue\+A\+D\+T.\+h@{Queue\+A\+D\+T.\+h}}
+\subsubsection{\texorpdfstring{Queue}{Queue}}
+{\footnotesize\ttfamily typedef struct \hyperlink{structQueue}{Queue} \hyperlink{structQueue}{Queue}}
+
+queue structure\+: contains the list, front, back, and length of queue 
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{QueueADT_8h_ab6692939eeb89d044d92061a6501e505}\label{QueueADT_8h_ab6692939eeb89d044d92061a6501e505}} 
+\index{Queue\+A\+D\+T.\+h@{Queue\+A\+D\+T.\+h}!compare@{compare}}
+\index{compare@{compare}!Queue\+A\+D\+T.\+h@{Queue\+A\+D\+T.\+h}}
+\subsubsection{\texorpdfstring{compare()}{compare()}}
+{\footnotesize\ttfamily int compare (\begin{DoxyParamCaption}\item[{const void $\ast$}]{first,  }\item[{const void $\ast$}]{second }\end{DoxyParamCaption})}
+
+Function to compare two elements 
+\begin{DoxyParams}{Parameters}
+{\em first} & const void data \\
+\hline
+{\em second} & const void data \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+-\/1 if first is smaller, 0 if equal, 1 if first is larger 
+\end{DoxyReturn}
+\mbox{\Hypertarget{QueueADT_8h_accc2c49d11d601a77eb598c3741ffe9a}\label{QueueADT_8h_accc2c49d11d601a77eb598c3741ffe9a}} 
+\index{Queue\+A\+D\+T.\+h@{Queue\+A\+D\+T.\+h}!create@{create}}
+\index{create@{create}!Queue\+A\+D\+T.\+h@{Queue\+A\+D\+T.\+h}}
+\subsubsection{\texorpdfstring{create()}{create()}}
+{\footnotesize\ttfamily \hyperlink{structQueue}{Queue}$\ast$ create (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Creates and Initializes a queue. Allocates memory to the struct. \begin{DoxyReturn}{Returns}
+pointer to the queue 
+\end{DoxyReturn}
+\mbox{\Hypertarget{QueueADT_8h_a045ef43f63919ca19115c060344cdac0}\label{QueueADT_8h_a045ef43f63919ca19115c060344cdac0}} 
+\index{Queue\+A\+D\+T.\+h@{Queue\+A\+D\+T.\+h}!dequeue@{dequeue}}
+\index{dequeue@{dequeue}!Queue\+A\+D\+T.\+h@{Queue\+A\+D\+T.\+h}}
+\subsubsection{\texorpdfstring{dequeue()}{dequeue()}}
+{\footnotesize\ttfamily void$\ast$ dequeue (\begin{DoxyParamCaption}\item[{\hyperlink{structQueue}{Queue} $\ast$}]{p\+Queue }\end{DoxyParamCaption})}
+
+Function removed a Node from the front of a queue. \begin{DoxyPrecond}{Precondition}
+\textquotesingle{}\hyperlink{structQueue}{Queue}\textquotesingle{} type must exist and not be empty 
+\end{DoxyPrecond}
+
+\begin{DoxyParams}{Parameters}
+{\em p\+Queue} & pointer to the queue \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the removed element 
+\end{DoxyReturn}
+\mbox{\Hypertarget{QueueADT_8h_a89893c23833b9fa8e7dde90343ca8885}\label{QueueADT_8h_a89893c23833b9fa8e7dde90343ca8885}} 
+\index{Queue\+A\+D\+T.\+h@{Queue\+A\+D\+T.\+h}!destroy@{destroy}}
+\index{destroy@{destroy}!Queue\+A\+D\+T.\+h@{Queue\+A\+D\+T.\+h}}
+\subsubsection{\texorpdfstring{destroy()}{destroy()}}
+{\footnotesize\ttfamily void destroy (\begin{DoxyParamCaption}\item[{\hyperlink{structQueue}{Queue} $\ast$}]{p\+Queue }\end{DoxyParamCaption})}
+
+Function to delete all data within the queue \begin{DoxyPrecond}{Precondition}
+\textquotesingle{}\hyperlink{structQueue}{Queue}\textquotesingle{} type must exist 
+\end{DoxyPrecond}
+
+\begin{DoxyParams}{Parameters}
+{\em p\+Queue} & pointer to the queue to destroy \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{QueueADT_8h_a719e32872e4862e2cd83281e87b60ed1}\label{QueueADT_8h_a719e32872e4862e2cd83281e87b60ed1}} 
+\index{Queue\+A\+D\+T.\+h@{Queue\+A\+D\+T.\+h}!enqueue@{enqueue}}
+\index{enqueue@{enqueue}!Queue\+A\+D\+T.\+h@{Queue\+A\+D\+T.\+h}}
+\subsubsection{\texorpdfstring{enqueue()}{enqueue()}}
+{\footnotesize\ttfamily void enqueue (\begin{DoxyParamCaption}\item[{\hyperlink{structQueue}{Queue} $\ast$}]{p\+Queue,  }\item[{void $\ast$}]{data }\end{DoxyParamCaption})}
+
+Fucntion inserts a Node to the back of a queue. \begin{DoxyPrecond}{Precondition}
+\textquotesingle{}\hyperlink{structQueue}{Queue}\textquotesingle{} type must exist 
+\end{DoxyPrecond}
+
+\begin{DoxyParams}{Parameters}
+{\em p\+Queue} & pointer to the queue \\
+\hline
+{\em data} & a pointer to data that is to be added to the queue \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{QueueADT_8h_ae28fcf858ea1c33ed0b56eb82b647306}\label{QueueADT_8h_ae28fcf858ea1c33ed0b56eb82b647306}} 
+\index{Queue\+A\+D\+T.\+h@{Queue\+A\+D\+T.\+h}!is\+Empty@{is\+Empty}}
+\index{is\+Empty@{is\+Empty}!Queue\+A\+D\+T.\+h@{Queue\+A\+D\+T.\+h}}
+\subsubsection{\texorpdfstring{is\+Empty()}{isEmpty()}}
+{\footnotesize\ttfamily bool is\+Empty (\begin{DoxyParamCaption}\item[{\hyperlink{structQueue}{Queue} $\ast$}]{p\+Queue }\end{DoxyParamCaption})}
+
+Function to check if a queue is empty. \begin{DoxyPrecond}{Precondition}
+\textquotesingle{}\hyperlink{structQueue}{Queue}\textquotesingle{} type must exist 
+\end{DoxyPrecond}
+
+\begin{DoxyParams}{Parameters}
+{\em p\+Queue} & pointer to the queue \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if empty or false if not 
+\end{DoxyReturn}
+\mbox{\Hypertarget{QueueADT_8h_a8fa514a5fd902bd2fe46d57d14d1ae8a}\label{QueueADT_8h_a8fa514a5fd902bd2fe46d57d14d1ae8a}} 
+\index{Queue\+A\+D\+T.\+h@{Queue\+A\+D\+T.\+h}!peek@{peek}}
+\index{peek@{peek}!Queue\+A\+D\+T.\+h@{Queue\+A\+D\+T.\+h}}
+\subsubsection{\texorpdfstring{peek()}{peek()}}
+{\footnotesize\ttfamily void$\ast$ peek (\begin{DoxyParamCaption}\item[{\hyperlink{structQueue}{Queue} $\ast$}]{p\+Queue }\end{DoxyParamCaption})}
+
+Function to look at the front of a queue without removing it. \begin{DoxyPrecond}{Precondition}
+\textquotesingle{}\hyperlink{structQueue}{Queue}\textquotesingle{} type must exist and be initialized 
+\end{DoxyPrecond}
+
+\begin{DoxyParams}{Parameters}
+{\em p\+Queue} & pointer to the queue \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the first element in the queue 
+\end{DoxyReturn}

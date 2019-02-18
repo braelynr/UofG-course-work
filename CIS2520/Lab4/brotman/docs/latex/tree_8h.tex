@@ -1,0 +1,168 @@
+\hypertarget{tree_8h}{}\section{include/tree.h File Reference}
+\label{tree_8h}\index{include/tree.\+h@{include/tree.\+h}}
+
+
+File containing the structures for a self-\/balancing binary tree and additional functions.  
+
+
+{\ttfamily \#include \char`\"{}balanced\+Tree\+A\+P\+I.\+h\char`\"{}}\newline
+Include dependency graph for tree.\+h\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=260pt]{tree_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=214pt]{tree_8h__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structBalancedBinTree}{Balanced\+Bin\+Tree}
+\item 
+struct \hyperlink{structBalancedBinTreeNode}{Balanced\+Bin\+Tree\+Node}
+\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef struct \hyperlink{structBalancedBinTreeNode}{Balanced\+Bin\+Tree\+Node} \hyperlink{tree_8h_a2215a7c79686526cfed9198a82cb295e}{Tree\+Node}
+\item 
+typedef struct \hyperlink{structBalancedBinTree}{Balanced\+Bin\+Tree} \hyperlink{tree_8h_afe8f5b9235f7a27460c81ff3ff48788e}{Tree}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{tree_8h_a2215a7c79686526cfed9198a82cb295e}{Tree\+Node} $\ast$ \hyperlink{tree_8h_a637bee38441530e03b76fa0c98535a4b}{insert} (\hyperlink{tree_8h_a2215a7c79686526cfed9198a82cb295e}{Tree\+Node} $\ast$tree\+Root, void $\ast$data, int($\ast$compare\+FP)(void $\ast$data1, void $\ast$data2))
+\item 
+\hyperlink{tree_8h_a2215a7c79686526cfed9198a82cb295e}{Tree\+Node} $\ast$ \hyperlink{tree_8h_acb01f1169d0b166788b3dedd8c5108b0}{rotate\+With\+Left\+Child} (\hyperlink{tree_8h_a2215a7c79686526cfed9198a82cb295e}{Tree\+Node} $\ast$old\+Root)
+\item 
+\hyperlink{tree_8h_a2215a7c79686526cfed9198a82cb295e}{Tree\+Node} $\ast$ \hyperlink{tree_8h_a5453280718fc5133caff315b34abad20}{rotate\+With\+Right\+Child} (\hyperlink{tree_8h_a2215a7c79686526cfed9198a82cb295e}{Tree\+Node} $\ast$old\+Root)
+\item 
+\hyperlink{tree_8h_a2215a7c79686526cfed9198a82cb295e}{Tree\+Node} $\ast$ \hyperlink{tree_8h_a68e9e7b3bbc8b3535af3b9fc60bbbb22}{double\+Rotate\+With\+Right\+Child} (\hyperlink{tree_8h_a2215a7c79686526cfed9198a82cb295e}{Tree\+Node} $\ast$old\+Root)
+\item 
+\hyperlink{tree_8h_a2215a7c79686526cfed9198a82cb295e}{Tree\+Node} $\ast$ \hyperlink{tree_8h_a35f01c890aaa69ce4751decfd2944ab3}{double\+Rotate\+With\+Left\+Child} (\hyperlink{tree_8h_a2215a7c79686526cfed9198a82cb295e}{Tree\+Node} $\ast$old\+Root)
+\item 
+\hyperlink{tree_8h_a2215a7c79686526cfed9198a82cb295e}{Tree\+Node} $\ast$ \hyperlink{tree_8h_ad3f2d9b1b5412380074254b09dbddc71}{delete} (\hyperlink{tree_8h_a2215a7c79686526cfed9198a82cb295e}{Tree\+Node} $\ast$root, void $\ast$data, \hyperlink{tree_8h_afe8f5b9235f7a27460c81ff3ff48788e}{Tree} $\ast$the\+Tree)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+File containing the structures for a self-\/balancing binary tree and additional functions. 
+
+\begin{DoxyDate}{Date}
+July 2018 
+\end{DoxyDate}
+
+
+\subsection{Typedef Documentation}
+\mbox{\Hypertarget{tree_8h_afe8f5b9235f7a27460c81ff3ff48788e}\label{tree_8h_afe8f5b9235f7a27460c81ff3ff48788e}} 
+\index{tree.\+h@{tree.\+h}!Tree@{Tree}}
+\index{Tree@{Tree}!tree.\+h@{tree.\+h}}
+\subsubsection{\texorpdfstring{Tree}{Tree}}
+{\footnotesize\ttfamily typedef struct \hyperlink{structBalancedBinTree}{Balanced\+Bin\+Tree} \hyperlink{tree_8h_afe8f5b9235f7a27460c81ff3ff48788e}{Tree}}
+
+typedef for struct name \mbox{\Hypertarget{tree_8h_a2215a7c79686526cfed9198a82cb295e}\label{tree_8h_a2215a7c79686526cfed9198a82cb295e}} 
+\index{tree.\+h@{tree.\+h}!Tree\+Node@{Tree\+Node}}
+\index{Tree\+Node@{Tree\+Node}!tree.\+h@{tree.\+h}}
+\subsubsection{\texorpdfstring{Tree\+Node}{TreeNode}}
+{\footnotesize\ttfamily typedef struct \hyperlink{structBalancedBinTreeNode}{Balanced\+Bin\+Tree\+Node} \hyperlink{tree_8h_a2215a7c79686526cfed9198a82cb295e}{Tree\+Node}}
+
+typedef for struct name 
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{tree_8h_ad3f2d9b1b5412380074254b09dbddc71}\label{tree_8h_ad3f2d9b1b5412380074254b09dbddc71}} 
+\index{tree.\+h@{tree.\+h}!delete@{delete}}
+\index{delete@{delete}!tree.\+h@{tree.\+h}}
+\subsubsection{\texorpdfstring{delete()}{delete()}}
+{\footnotesize\ttfamily \hyperlink{tree_8h_a2215a7c79686526cfed9198a82cb295e}{Tree\+Node}$\ast$ delete (\begin{DoxyParamCaption}\item[{\hyperlink{tree_8h_a2215a7c79686526cfed9198a82cb295e}{Tree\+Node} $\ast$}]{root,  }\item[{void $\ast$}]{data,  }\item[{\hyperlink{tree_8h_afe8f5b9235f7a27460c81ff3ff48788e}{Tree} $\ast$}]{the\+Tree }\end{DoxyParamCaption})}
+
+Function to delete a node 
+\begin{DoxyParams}{Parameters}
+{\em root} & pointer to root of subtree \\
+\hline
+{\em data} & data that should be deleted \\
+\hline
+{\em the\+Tree} & pointer to entire tree \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{tree_8h_a35f01c890aaa69ce4751decfd2944ab3}\label{tree_8h_a35f01c890aaa69ce4751decfd2944ab3}} 
+\index{tree.\+h@{tree.\+h}!double\+Rotate\+With\+Left\+Child@{double\+Rotate\+With\+Left\+Child}}
+\index{double\+Rotate\+With\+Left\+Child@{double\+Rotate\+With\+Left\+Child}!tree.\+h@{tree.\+h}}
+\subsubsection{\texorpdfstring{double\+Rotate\+With\+Left\+Child()}{doubleRotateWithLeftChild()}}
+{\footnotesize\ttfamily \hyperlink{tree_8h_a2215a7c79686526cfed9198a82cb295e}{Tree\+Node}$\ast$ double\+Rotate\+With\+Left\+Child (\begin{DoxyParamCaption}\item[{\hyperlink{tree_8h_a2215a7c79686526cfed9198a82cb295e}{Tree\+Node} $\ast$}]{old\+Root }\end{DoxyParamCaption})}
+
+Function to complete double rotatatoion with left child 
+\begin{DoxyParams}{Parameters}
+{\em oldroot} & pointer to original subtree root \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+pointer to child 
+\end{DoxyReturn}
+\mbox{\Hypertarget{tree_8h_a68e9e7b3bbc8b3535af3b9fc60bbbb22}\label{tree_8h_a68e9e7b3bbc8b3535af3b9fc60bbbb22}} 
+\index{tree.\+h@{tree.\+h}!double\+Rotate\+With\+Right\+Child@{double\+Rotate\+With\+Right\+Child}}
+\index{double\+Rotate\+With\+Right\+Child@{double\+Rotate\+With\+Right\+Child}!tree.\+h@{tree.\+h}}
+\subsubsection{\texorpdfstring{double\+Rotate\+With\+Right\+Child()}{doubleRotateWithRightChild()}}
+{\footnotesize\ttfamily \hyperlink{tree_8h_a2215a7c79686526cfed9198a82cb295e}{Tree\+Node}$\ast$ double\+Rotate\+With\+Right\+Child (\begin{DoxyParamCaption}\item[{\hyperlink{tree_8h_a2215a7c79686526cfed9198a82cb295e}{Tree\+Node} $\ast$}]{old\+Root }\end{DoxyParamCaption})}
+
+Function to complete double rotatatoion with right child 
+\begin{DoxyParams}{Parameters}
+{\em oldroot} & pointer to original subtree root \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+pointer to child 
+\end{DoxyReturn}
+\mbox{\Hypertarget{tree_8h_a637bee38441530e03b76fa0c98535a4b}\label{tree_8h_a637bee38441530e03b76fa0c98535a4b}} 
+\index{tree.\+h@{tree.\+h}!insert@{insert}}
+\index{insert@{insert}!tree.\+h@{tree.\+h}}
+\subsubsection{\texorpdfstring{insert()}{insert()}}
+{\footnotesize\ttfamily \hyperlink{tree_8h_a2215a7c79686526cfed9198a82cb295e}{Tree\+Node}$\ast$ insert (\begin{DoxyParamCaption}\item[{\hyperlink{tree_8h_a2215a7c79686526cfed9198a82cb295e}{Tree\+Node} $\ast$}]{tree\+Root,  }\item[{void $\ast$}]{data,  }\item[{int($\ast$)(void $\ast$data1, void $\ast$data2)}]{compare\+FP }\end{DoxyParamCaption})}
+
+Function to insert data into the tree 
+\begin{DoxyParams}{Parameters}
+{\em tree\+Root} & pointer to tree or subtree root \\
+\hline
+{\em data} & pointer to void data type \\
+\hline
+{\em compare\+FP} & pointer to compare function \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+pointer to inserted node 
+\end{DoxyReturn}
+\mbox{\Hypertarget{tree_8h_acb01f1169d0b166788b3dedd8c5108b0}\label{tree_8h_acb01f1169d0b166788b3dedd8c5108b0}} 
+\index{tree.\+h@{tree.\+h}!rotate\+With\+Left\+Child@{rotate\+With\+Left\+Child}}
+\index{rotate\+With\+Left\+Child@{rotate\+With\+Left\+Child}!tree.\+h@{tree.\+h}}
+\subsubsection{\texorpdfstring{rotate\+With\+Left\+Child()}{rotateWithLeftChild()}}
+{\footnotesize\ttfamily \hyperlink{tree_8h_a2215a7c79686526cfed9198a82cb295e}{Tree\+Node}$\ast$ rotate\+With\+Left\+Child (\begin{DoxyParamCaption}\item[{\hyperlink{tree_8h_a2215a7c79686526cfed9198a82cb295e}{Tree\+Node} $\ast$}]{old\+Root }\end{DoxyParamCaption})}
+
+Function to rotate with left child 
+\begin{DoxyParams}{Parameters}
+{\em oldroot} & pointer to original subtree root \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+pointer to child 
+\end{DoxyReturn}
+\mbox{\Hypertarget{tree_8h_a5453280718fc5133caff315b34abad20}\label{tree_8h_a5453280718fc5133caff315b34abad20}} 
+\index{tree.\+h@{tree.\+h}!rotate\+With\+Right\+Child@{rotate\+With\+Right\+Child}}
+\index{rotate\+With\+Right\+Child@{rotate\+With\+Right\+Child}!tree.\+h@{tree.\+h}}
+\subsubsection{\texorpdfstring{rotate\+With\+Right\+Child()}{rotateWithRightChild()}}
+{\footnotesize\ttfamily \hyperlink{tree_8h_a2215a7c79686526cfed9198a82cb295e}{Tree\+Node}$\ast$ rotate\+With\+Right\+Child (\begin{DoxyParamCaption}\item[{\hyperlink{tree_8h_a2215a7c79686526cfed9198a82cb295e}{Tree\+Node} $\ast$}]{old\+Root }\end{DoxyParamCaption})}
+
+Function to rotate with right child 
+\begin{DoxyParams}{Parameters}
+{\em oldroot} & pointer to original subtree root \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+pointer to child 
+\end{DoxyReturn}

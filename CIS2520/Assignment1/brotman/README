@@ -1,0 +1,88 @@
+To run the program:
+
+1. Type make
+
+2. Type ./bin/testMe filename
+*the file must exist inside the project*
+
+************************************************
+Complexity Section
+************************************************
+**QueueADT.h
+
+Function: Queue * create();
+  Big O Notation: O(1)
+  This function mallocs space for a new queue and sets all pointers to NULL
+
+Function: void destroy(Queue *pQueue);
+  Big O Notation: O(N)
+  This function deletes each item in the list starting at the front, finishing at the back.
+
+Function: void enqueue(Queue *pQueue, void *data);
+  Big O Notation: O(1)
+  This function adds a node to the back of a queue. No searching is involved.
+
+Function: void * dequeue(Queue *pQueue);
+  Big O Notation: O(1)
+  This function deletes a node from the front of a queue. No searching is involved.
+
+Function: void * peek(Queue *pQueue);
+  Big O Notation: O(1)
+  This function gets the element at the front of the queue. No searching required.
+
+Function: bool isEmpty(Queue *pQueue);
+  Big O Notation: O(1)
+  This function checks if the front of the queue is NULL. No searching required.
+
+Function: int compare(const void *first, const void *second);
+  Big O Notation: O(1)
+  This function compares two items and returns an integer.
+
+
+**LinkedListAPI.h
+
+Function: List *initializeList(void (*printFunction)(void *toBePrinted),void (*deleteFunction)(void *toBeDeleted),int (*compareFunction)(const void *first,const void *second));
+  Big O Notation: O(1)
+  This function mallocs space for a new list and sets all pointers to NULL
+
+Function: Node *initializeNode(void *data);
+  Big O Notation: O(1)
+  This function mallocs space for a new node and sets all pointers to NULL
+
+Function: void insertFront(List *list, void *toBeAdded);
+  Big O Notation: O(1)
+  This function inserts a node at the front of a list. No searching is involved
+
+Function: void insertBack(List *list, void *toBeAdded);
+  Big O Notation: O(1)
+  This function inserts a node at the back of a list. No searching involved because we have a pointer to the tail.
+
+Function: void deleteList(List *list);
+  Big O Notation: O(N)
+  This function deletes each node in a list starting at the head and ending at the tail.
+
+Function: void insertSorted(List *list, void *toBeAdded);
+  Big O Notation: O(N)
+  This function conducts a linear search to find the correct position to insert the node.
+  The worst case is that every node must be examined and the new node is inserted at the tail every time.
+
+Function: int deleteDataFromList(List *list, void *toBeDeleted);
+  Big O Notation: O(N)
+  This function conducts a linear search to find the node to delete.
+  The worst case is that the every node must be searched and the node to delete is at the tail every time.
+
+Function: void *getFromFront(List *list);
+  Big O Notation: O(1)
+  This function returns the data at the head of the list.
+
+Function: void *getFromBack(List *list);
+  Big O Notation: O(1)
+  This function returns the data at the tail of the list.
+
+Function: void printForward(List *list);
+  Big O Notation: O(N)
+  This function iterates linearly through the list starting at the head and ending at the tail.
+
+Function: void printBackwards(List *list);
+  Big O Notation: O(N)
+  This function iterates linearly through the list starting at the tail and ending at the head.
